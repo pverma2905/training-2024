@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // User defined objects
+
+        // 3 ways
+        // 1 Create a direct instance of an Object class
+        // or an empty object {}
+        // 2 object literal
+        // 3 class (using template class) - object constructor
+
+        /*// 1
+        var personObj1 = {};
+        var personObj2 = new Object();
+
+        personObj1.id = 123;
+        personObj1.name = 'Sachin';
+        personObj1.getData = function(){
+            return this.id+' '+this.name;
+        }
+
+        personObj2.id = 456;
+        personObj2.name = 'Rahul';
+        personObj2.getInfo = function(){
+            return this.id+' '+this.name;
+        }
+
+        console.log(personObj1.getData());
+        console.log(personObj2.getInfo());*/
+
+        /*// 2 object literal syntax
+        var person1 = {
+            id:1,
+            name:'Rahul',
+            getData: function(){
+                return this.id+' '+this.name;
+            }
+        }
+        console.log(person1.id+' '+person1.name);
+        console.log(person1.getData());
+
+        var person2 = {
+            id:2,
+            name:'Sourav',
+            getData: function(){
+                return this.id+' '+this.name;
+            }
+        }
+        console.log(person2.id+' '+person2.name);
+        console.log(person2.getData()); */
+
+
+        // 3 class - object constructor
+
+        //Employee - firstName, lastName, city, getEmpInfo
+
+        // In ES5 if you want to create a class, you have to use 
+        // a keyword function
+
+        // class Employee / object constructor
+        function Employee(fName,lName,city){
+            this.firstName = fName;
+            this.lastName = lName;
+            this.city = city;
+            this.getEmpInfo = function(){
+                alert(this.firstName+' '+this.lastName+' '+this.city);
+            }
+        }
+
+        var emp1 = new Employee('Akshay','J','Pune');
+        var emp2 = new Employee('Ashish','G','Mumbai');
+
+
+        console.log('FirstName ' + emp1.firstName +
+        ' LastName ' + emp1.lastName +
+        ' City ' + emp1.city);
+        emp1.getEmpInfo();
+
+        console.log('FirstName ' + emp2.firstName +
+        ' LastName ' + emp2.lastName +
+        ' City ' + emp2.city);
+        emp2.getEmpInfo();
+
+        /*
+            Any programming language is said to be Object Oriented Programming
+            if and only if it supports 4 major pillars of object oriented paradigm
+
+            Abstraction - Providing necessary details and ignoring rest.
+            Encapsulation - Data Hiding. Providing security for the data and also
+                            provide way to access that data.- public interface.
+            Inheritance - One object resuses the features of another object
+                        as well as extend its own features.
+                        Reusability + Extensibility
+                        "Is a" kind of relationship
+
+            Containment - "has a" or "Is a part of"  - Reusability
+
+            vehicle - which has a wheel
+            
+            2 wheeler   3 wheeler
+
+        Bike        Scooter
+        Bike is a 2 wheeler - is a vehicle
+
+        Car has an engine
+        Car has a steering / Steering is a part of car
+
+        2 types of containment
+        Composition - tightly coupled - University - Dept
+        Aggregation - loosely coupled - Dept - Faculties
+
+            Polymorphism - Ability to take more than one form.
+            Sending a same message but getting a different response 
+            depending upon in which context you are doing so.
+
+        object - A reallife entityt which 4 characteristic or properties like
+            State - current values of its attributes,
+            Behaviour - how object act or react when its state changes,
+            Identity - is that property by which you can get differentiated from others,
+            Responsibility - What role you plays in the system
+        
+            instance of a class
+        */
+    </script>
+</body>
+</html>

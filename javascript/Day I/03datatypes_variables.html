@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Datatypes and Variables
+
+        var a = 5;
+        var b = 6.7;
+        var ch = 'A';
+        var str = "abcd";
+        var bool = true;
+        var x;
+
+        console.log('a '+a+' typeof(a) '+typeof(a));
+        console.log('b '+b+' typeof(b) '+typeof b);
+        console.log('ch '+ch+' type of ch '+typeof(ch));
+        console.log('str '+str+' type of str '+typeof(str));
+        console.log('bool '+bool+' type of bool '+typeof(bool));
+        console.log('x '+x+' type of x '+typeof(x));
+        
+        // array
+        var cars = ['Audi','Nano','BMW'];
+
+        // object - object literal syntax
+        var obj = {firstName:'Sachin',lastName:'Tendulkar',city:'Mumbai'};
+
+        document.write(cars);
+        document.write('<br/>'+obj.firstName+' '+obj.lastName);
+
+        document.write('<br/>'+'a '+a+' type of a '+typeof(a));
+        a  ='Abhijeet';
+        document.write('<br/>'+'a '+a+' type of a '+typeof(a));
+        a = 4 + 5 + 'xyz';
+        document.write('<br/>'+'a '+a+' type of a '+typeof(a));
+        a = 'abcd'+4+5;
+        document.write('<br/>'+'a '+a+' type of a '+typeof(a));
+
+        // Variable Naming Convention
+        // Variable and Function Names are in camelCase
+        // global variables and constants like PI are in UPPERCASE.
+        // camelCase and Underscore in vairble names.
+        // in variable names you can even use $.
+    
+        /*var z = 11;
+        //if(z == '11'){ // '==' equal compares only value and not the Datatypes
+        if(z === '11'){ // '===' equal compares  value and datatype
+            alert('equal!');
+        }else{
+            alert('not equal!');
+        }*/
+
+        // for, while, do-while - for-in (ES5), for-of(ES2015)
+        console.log('\nfor loop!');
+        for(var i = 0;i<cars.length;i++){
+            console.log(cars[i]);
+        }
+
+        console.log('\nfor in loop!');
+        for(var i in cars){
+            console.log(cars[i]); //'i' is still a loop counter
+        }
+
+        console.log('\nfor of loop ES2015!');
+        for(var ele of cars){
+           console.log(ele); // 'ele' is an element
+        }
+
+    </script>
+</body>
+</html>

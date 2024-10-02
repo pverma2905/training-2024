@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>First Para!</p>
+    <button>Remove Para!</button>
+    <script>
+        // DOM - HTML Document Object Model
+        /*
+            document.getElementById
+            document.getElementsByClassName
+            document.getElementsByTagName
+            document.querySelector - complex query - CSS3 selectors
+            document.querySelectorAll - complex query - CSS3 selectors
+        */
+
+        var newPara = document.createElement('p');
+        newPara.innerHTML = 'New Para!';
+        newPara.style.backgroundColor = 'maroon';
+        newPara.style.color = 'peachpuff';
+        newPara.style.width = '100px';
+        newPara.style.border = 'solid gray 3px';
+
+        document.body.appendChild(newPara);
+
+        document.getElementsByTagName('button')[0].onclick = function(){
+            var delPara = document.getElementsByTagName('p')[0];
+            document.body.removeChild(delPara);
+        }
+
+
+        // BOM - Browser Object Model
+        /*
+        window - global object for browser window
+        innerHeight and innnerWidth
+        margin and padding
+
+        window.location, protocol, hostname, pathname
+        window.history, forward and backward
+
+        */
+
+        document.write('<br/>'+window.location.href);
+        document.write('<br/>'+window.location.protocol);
+        document.write('<br/>'+window.location.hostname);
+
+        // screen - gives information about client's screen
+        console.log(screen);
+
+        // navigator - object which contains information about browser's plugin
+        for(var i in navigator.plugins){
+            document.write('<br/>'+navigator.plugins[i].name);
+        }
+
+    </script>
+</body>
+</html>

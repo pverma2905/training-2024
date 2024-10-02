@@ -1,0 +1,38 @@
+1)what is javascript??
+it is client side scripting language
+it is used in dom manupulation
+
+it is developed by brendan eich in 1995
+
+but by using node js it is clent side and server side language
+and it is suport for oops 
+
+2)what is node js?
+it is a runtime platforn 
+
+java        jvm runtime
+C#          clr runtime
+C, C++      c runtime
+javascript  nodejs runtime
+
+
+3)type of package manager??
+npm:-  client side + server side
+bower:- client side
+yarn:- client side + server side
+
+4)client side package ??
+angular
+
+5)server side package??
+orm-sequelize
+odm-mongoose
+
+6)ready state change??
+
+
+7)window.onload??
+
+
+8)more prefer onload and ready state??
+onload is more prefer 

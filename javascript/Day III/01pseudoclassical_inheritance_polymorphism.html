@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Pseudo Classical Inheritance
+            Human - base class
+            Student - derived class
+        */
+
+        function Human(name){
+            this.name = name;
+        }
+        Human.prototype.speak = function(){
+            alert('I speak English!');
+        }
+        Human.prototype.introduction = function(){
+            alert('Hi, I am '+this.name);
+        }
+
+        // Prototype Chaining
+        Student.prototype = Object.create(Human); // new Human();
+        Student.prototype.constructor = Student;
+
+        function Student(nm,school,courses){
+            // classical inheritance
+            Human.call(this,nm);
+            this.school = school;
+            this.courses = courses;
+        }
+
+        Student.prototype.takeExams = function(){
+            alert('This is exam time!');
+        }
+
+        // Function Overriding
+        Student.prototype.introduction = function(){
+            alert('Hi, I am '+this.name+', I am a student of '+this.school+', I study '+this.courses);
+        }
+
+        var person = new Human('Pooja');
+        //person.introduction();
+        //person.speak();
+
+        var student = new Student('Sonali','ABC',['Javascript','Node,','Angular']);
+        //student.introduction();
+        //student.speak();
+        //student.takeExams();
+
+
+        function letMeIntroduce(obj){
+            obj.introduction();// sending a same message but getting a different response based on the context
+        }
+
+        letMeIntroduce(person);
+        letMeIntroduce(student);
+
+    </script>
+</body>
+</html>

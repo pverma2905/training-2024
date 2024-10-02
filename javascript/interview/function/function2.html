@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <script>
+        ////////////////////////////////////// zero ///////////////////////////////////////
+        // Note: in old javascript local varible have functional scope
+
+        var g = 9; // global variable
+        function foo() {
+            var l = 5; // local variable to function foo
+            {
+                var x = 6; // by hosting its  getting
+            }
+
+            console.log('g ' + g + ' l ' + l + ' x ' + x);
+        }
+        foo();
+
+        ////////////////////////////////////// first ///////////////////////////////////////
+        // NOTE: in es6 javascript let and const have block scope
+
+        //  var g=9; // global variable
+        // function foo(){
+        //     var l = 5; // local variable to function foo
+        //     {
+        //         let x=6; // by hosting its  getting
+        //     }
+
+        //     console.log('g '+g+' l '+l+' x '+x);
+
+        // }
+        // foo();
+
+        ////////////////////////////////////// second ///////////////////////////////////////
+
+        // NOTE: if it is undefined variable it is hosted as global variable in old javascript
+
+
+        var g = 9; // global variable
+        function foo() {
+            var l = 5; // local variable to function foo
+            {
+                var x = 6; // by hosting its  getting
+            }
+            t = 8;
+            console.log('g ' + g + ' l ' + l + ' t ' + t);
+
+        }
+        foo();
+        console.log('g ' + g + ' t ' + t);
+
+
+        ////////////////////////////////////// third ///////////////////////////////////////
+
+        // NOTE: if it is undefined variable it is hosted as global variable in old javascript
+        // to ovid this use use strict
+
+        var g = 9; // global variable
+        function foo() {
+            var l = 5; // local variable to function foo
+            {
+                var x = 6; // by hosting its  getting
+            }
+            t = 8;
+            console.log('g ' + g + ' l ' + l + ' t ' + t);
+
+        }
+        foo();
+        console.log('g ' + g + ' t ' + t);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

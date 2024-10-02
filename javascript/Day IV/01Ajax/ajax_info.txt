@@ -1,0 +1,3 @@
+Some text file, that needs to be read through
+AJAX request. Look at the network tab in the browser.
+New Line here.

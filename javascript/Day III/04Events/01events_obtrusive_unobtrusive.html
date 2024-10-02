@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1"></div>
+    <!-- Obtrusive Javascript - not a good programming practise -->
+    <!-- <button onclick="getElementById('div1').innerHTML = Date()">Date & Time</button> -->
+    
+    <!--  Obtrusive Javascript -->
+    <!-- <button onclick="getDateTime()">Date & Time</button> -->
+
+     <!-- Unobtrusive Javascript - recommended -->
+    <button id="btnDateTime">Date & Time</button>
+    <script>
+
+        /*function getId(id){
+            return document.getElementById(id);
+        }*/
+        function $(id){
+            return document.getElementById(id);
+        }
+
+        // whole javascript code is in script tag that is unobtrusive javascript
+       
+        // var btn = document.getElementById('btnDateTime');
+        // var btn = getId('btnDateTime');
+        var btn = $('btnDateTime');
+        // on helper on<eventname>
+        btn.onclick = getDateTime;// providing event listener to the button's click event
+
+        function getDateTime(){
+            // document.getElementById('div1').innerHTML = Date();
+            // getId('div1').innerHTML = Date();
+            $('div1').innerHTML = Date();
+        }
+    </script>
+</body>
+</html>

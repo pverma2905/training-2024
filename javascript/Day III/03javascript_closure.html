@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*// without closure
+        // var hits = 0; // global variable - no security to the global variable
+
+        function showHits(){
+            //var hits = 0;
+            hits++;
+            return hits;
+        }
+
+        alert(showHits());
+        alert(showHits());
+        //hits = 10;
+        alert(showHits());*/
+
+        // with javascript closure
+
+        /*var foo =   (function(){
+                        return 10;
+                    })();
+        alert(foo);*/
+
+        var getHits = (function(){
+                        var hits = 0; // Initialized only once
+                    
+                        function showHits(){ // functions have lexical scope - means wherever function is defined 
+                                             // it would have access to the variables those are declared there rather than
+                                            // wherever it is being called.
+                            hits++;
+                            return hits;
+                        }
+                        return showHits;
+                     })();
+            
+        alert(getHits());
+        alert(getHits());
+        alert(getHits());
+
+        // Javascript closure - retain the environment of the outer function
+        // within the inner function even though that inner function is getting executed outside
+        // of the outer function.
+    </script>
+</body>
+</html>

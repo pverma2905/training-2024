@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        This Content is going to change!
+    </div>
+    <button onclick="loadDoc('ajax_info.txt')">Change Content</button>
+    <script>
+        // AJAX- Aysnchronous JavaScript and XML
+        function loadDoc(url){
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function(){
+                // ready states
+                /*
+                0 request is initialized.
+                1 request has been set up.
+                2 request has been sent.
+                3 request is in process.
+                4 request is complete.
+                */
+                if(xhttp.readyState === 4 && xhttp.status === 200){
+                    console.log(xhttp.status);
+                    document.getElementById('demo').innerHTML
+                     = xhttp.responseText;
+                }
+            }
+
+            xhttp.open('GET',url,true);
+            xhttp.send();
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+AJAX - Asynchronous JavaScript and XML. It's a technique used in web
+development to create interactive web applications by exchanging data with
+a server without reloading the entire page.
+
+Key Components of AJAX
+XMLHttpRequest object  - This is the core object used to make asynchronous
+                        requests to the server.
+JavaScript
+XML (or other data formats) - (JSON - JavaScript Object Notation)
+
+
+Benefits of AJAX
+Improved user experience
+Reduced server load
+Enhanced functionality
+ -->

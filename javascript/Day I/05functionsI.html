@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        functions - In ES5 - Variable Argument Function
+        In ES5 javascript - No Function Overloading
+        
+        */
+        
+        /*function getArgs(){
+            document.write('<br/>first Inside getArgs!');
+
+            for(var i in arguments){
+                document.write('<br/>'+arguments[i]);
+            }
+            
+            document.write('<br/>');
+        }
+    
+        function getArgs(x,y,z){
+            document.write('<br/>Inside getArgs with 3 arguments!');
+
+            for(var i in arguments){
+                document.write('<br/>'+arguments[i]);
+            }
+            
+            document.write('<br/>');
+        }
+
+        function getArgs(x,y){
+            document.write('<br/>Inside getArgs with 2 arguments!');
+
+            for(var i in arguments){
+                document.write('<br/>'+arguments[i]);
+            }
+            
+            document.write('<br/>');
+        }
+        getArgs();
+        getArgs(10,20,30);
+        getArgs(434.34,'abcd'); */
+
+
+        "use strict"
+
+        var g = 9; // global variable
+
+        function foo(){
+            var l = 5; // local variable to function foo
+            //var x; // x is kind of declared
+            //console.log('g '+g+' l '+l+' x '+x);
+            {
+                 var x = 6;// Javascript Hoisting
+                //x = 6;
+                // x declaration is getting hoisted at the begining of the 
+                // function.
+                // local variables declared with keyword 'var' have function
+                // level scope.
+
+                // ES2015
+                //let x = 6; // local variable declared with keyword
+                            // 'let' and 'const' have block level scope
+                            // const means you can't change it' value
+            }
+            //t = 56;// assumption that this variable is declared somewhere globally
+            // console.log('g '+g+' l '+l+' x '+x+' t '+t);
+            console.log('g '+g+' l '+l+' x '+x);
+        }
+        foo();
+            //console.log('g '+g+' t '+t);
+    </script>
+</body>
+</html>

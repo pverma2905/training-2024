@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Assignment 1 - try for following 
+        
+        alert - messagebox
+        prompt - asking user to enter some value
+        confirm - confirming - ok or cancel
+
+
+        // Assignment 2
+
+        Explore built-in objects
+
+        Number,
+        String,
+        Date
+        Array
+        Boolean,
+        Math etc.
+        */
+
+        // Date
+        var d = Date.now();// time elapsed since 1 jan 1970 in milliseconds
+        console.log(d);
+
+        d = new Date();
+        console.log('Date is '+d);
+
+        var hours = d.getHours();
+        var mins = d.getMinutes();
+        var seconds = d.getSeconds();
+
+        document.write('<br/>'+hours+':'+mins+':'+seconds);
+
+        // Timer - is one of the input device
+        // setTimeout, setInterval
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Anonymous data
+        //"abcd",10,34.34,[22,33,44],null;
+
+        // Anonymous function
+        // usages
+        // 1 Callback Methods
+        // 2 Self Executing Function/ IIFE - Immediately Invoked Function Expression
+
+        // Callback methods - fnction definition is written by your program,
+        // but your program doens't call it, it is being called by someone else
+        // that someone else could be
+        // o.s.
+        // h/w
+        // parallely running thread or
+        // any other module
+
+
+
+        /*// somelibrary.dll
+        function invoke_and_Add(fun1,fun2){
+            return fun1()+fun2();// here is the place where callback methods are getting called
+        }
+
+        // A.exe
+        function one(){
+            return 1;
+        }
+        function two(){
+            return 2;
+        }
+        console.log('Result is '+invoke_and_Add(one,two));
+
+        // B.exe
+        console.log('Result is '+invoke_and_Add(
+            // anonymous functions
+            function(){return 11;},
+            function(){return 22;})); */
+
+    
+        (function(n){
+            console.log('Doing Initialization and OFF! '+n);
+        })(5);// Self Executing Function
+
+        for(var i =1; i<=5;i++){
+            (function(n){
+                console.log('Doing Initialization and OFF! '+n);
+            })(i);// IIFE
+        }
+
+
+        // IIFE - Immediately Invoked Function Expression
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

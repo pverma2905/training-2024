@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // readystatechange
+        function bar() {
+        if (this.readyState == "complete") {
+          alert(this.readyState);
+          document.getElementById("para1").innerHTML =
+            "<h1>Modified Text!</h1>";
+        }
+      }
+      document.onreadystatechange = bar;
+
+       // document's readystate event
+      /*
+        5 ready states
+        unitialized - has not started loading yet
+        loading - is loading
+        loaded - is loaded
+        interactive - has loaded enough so that user can interact
+        complete - fully loaded
+        */
+
+        // onload 
+      function bar() {
+          document.getElementById("para1").innerHTML =
+            "<h1>Modified Text!</h1>";
+        }
+      window.onload = bar;
+
+      /*
+        For window object there is an event called as load, which will get fired
+        / raised when all the resources like 
+        html dom,
+        cursor,
+        icons,
+        bitmaps etc are getting loaded. So by executing code in the load event
+        we are making sure everything is already loaded and then the code that 
+        we have provided is getting loaded.
+        */
+    </script>
+   
+
+    
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p id="para1">Simple para!</p>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // global variable
+        // var population = 0;
+
+        function Person(){
+
+            // Instance variable
+            //this.population = 0;
+
+            // public property
+            this.id = 10;;
+            //this.name = 'default';
+            //// ctor level - only reusing the source code not in memory
+            //this.hobbies = ['Music','Cricket'];
+
+            // private data - local variable
+            var name = 'default';
+
+            // public method
+            this.getInfo = function(){
+                privateMethod();
+                return this.id+' '+name;
+            }
+
+            //private method
+            var privateMethod = function(){
+                console.log('Inside privateMethod!');
+            }
+
+            // this.population++;
+            // population++;
+
+            // Static Variable - class variable
+            // for static variable memory is allocated per class
+            // and not per object
+            
+            Person.population++;
+        }
+
+        // Declaring Static Variable
+        Person.population = 0;
+
+        // Prototype Level - reusing the source code as well as in-memory
+        Person.prototype.hobbies = ['Music','Cricket'];
+
+        var person1 = new Person();
+        var person2 = new Person();
+
+        //console.log(person1.id+' '+person1.name);
+        console.log(person1.getInfo());
+        //person2.privateMethod();
+
+        console.log(person1.hobbies);
+        console.log(person2.hobbies);
+        person1.hobbies.push('Computer Games');
+        console.log(person1.hobbies);
+        console.log(person2.hobbies);
+
+
+        // For instance variable
+       /* console.log('Population is '+person1.population);
+        var person3 = new Person();
+        console.log('Population is '+person1.population); */
+
+        // For global variable
+       /* console.log('Population is '+population);
+        var person3 = new Person();
+        population = 10; // global variables are not secured
+        console.log('Population is '+population); */
+
+        // For static variable
+        console.log('Population is '+Person.population);
+        var person3 = new Person();
+        //Person.population = 10; // public static property
+        console.log('Population is '+Person.population);
+
+    </script>
+</body>
+</html>

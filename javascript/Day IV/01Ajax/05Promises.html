@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*// create a simple promise and resolve it immediately
+      var promise1 = Promise.resolve("I am a resolved promise!");
+
+      //console.log(promise1);
+      promise1
+        .then((result) => console.log("Success ", result))
+        .catch((err) => console.error("Failure ", err));
+
+      // create a simple promise and reject it immediately
+      var promise2 = Promise.reject("Something went wrong!");
+
+      //console.log(promise1);
+      promise2
+        .then((result) => console.log("Success ", result))
+        .catch((err) => console.error("Failure ", err));
+        */
+
+        /*// Promise.all
+        let promise1 = new Promise(function (resolve, reject) {
+            resolve("I am Promise 1");
+        })
+        let promise2 = new Promise(function (resolve, reject) {
+            resolve("I am Promise 2");
+        })
+        let promise3 = new Promise(function (resolve, reject) {
+            //resolve("I am Promise 3");
+            reject('I am rejected Promise 3!')
+        })
+        let promise4 = new Promise(function (resolve, reject) {
+            resolve("I am Promise 4");
+        })
+
+        // Promise.all() - takes an iterable of promises as an input
+        // and returns a single promise that resolves to an array of the
+        // results of the input promises.
+
+        let promise5 = Promise.all([promise1,promise2,promise3,promise4]);
+
+        promise5.then((result) =>{
+            console.log(Array.isArray(result));
+            console.log(result[0]);
+            console.log(result[1]);
+            console.log(result[2]);
+            console.log(result[3]);
+        }).catch(err =>{
+            console.error('Catch Error ',err);
+        })*/
+
+        // Promise.any(promises) - it returns a promise 
+        // that fulfills as soon as any of the promises in the iterable
+        // fulfills.
+
+        let promise1 = Promise.reject(0);
+
+        let promise2 = new Promise((resolve, reject) => {
+            setTimeout( resolve,100,'I am Promise 2');
+        })
+        let promise3 = new Promise((resolve, reject) => {
+            setTimeout( resolve,500,'I am Promise 3');
+        })
+
+        let promises = [promise1,promise2,promise3];
+
+        Promise.any(promises)
+        .then(res => console.log(res));
+
+        // Assignment
+        // Promise.race()
+
+    </script>
+  </body>
+</html>
+
+<!-- 
+    Callback Hell - is a term used to describe a situation in javascript
+    programming, where nested callbacks become deeply intertwined and difficult
+    to manage. This can happen when code relies heavily on asynchronous
+    operations.
+
+    Deep level of code, making it hard to read and understand.
+    Complexity is more.
+    Managing erros in nested callback can be challenging.
+
+    So to solve the problem of callback hell
+
+    use 
+    Promises,
+    async / await
+    libraries and frameworks
+
+    Promises are a mechanism for handling asynchronous operations
+    in a more structured and manageable way compared to traditional
+    callbacks. They represent the eventual completion (or failure) of an
+    asynchronous operation and provide a way to chain operations together.
+
+    Pending - Initial State of the promise.
+    Fulfilled - Operation completes successfully.
+    Rejected - Operation fails.
+-->

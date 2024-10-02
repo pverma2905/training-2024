@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        In ES5 class  - using keyword function
+        Inheritance -   Prototype Chaining,
+                        Classical Inheritance,
+                        Pseudoclassical Inheritance
+
+        In ES2015 onwards class - using keyword class
+        Inheritance    - extends
+        */
+        // ES2015 way - Modern browser's support ES2015
+
+        class Human{
+            constructor(name){
+                this.name = name;
+            }
+            speak(){
+                alert('I speak English!');
+            }
+            introduction(){
+                alert('Hi, I am '+this.name);
+            }
+        }
+
+        class Student extends Human{
+            constructor(nm,school,courses){
+                super(nm);// mandatory if class is inherited from another class
+                this.school = school;
+                this.courses = courses;
+            }
+            introduction(){
+                alert('Hi, I am '+this.name+', I am a student of '+this.school+', I study '+this.courses);
+            }
+            takeExams(){
+                alert('This is exam time!');
+            }
+        }
+
+        var person = new Human('Nowshad');
+        person.introduction();
+        person.speak();
+
+        var student = new Student('Gauri','XYZ',['javascript','html5','css3','react']);
+        student.introduction();
+        student.speak();
+        student.takeExams();
+
+        // Transpilers
+        // ES2015 => ES5 - Babel
+        // TypeScript => ES5 - tsc (TypeScript Compiler)
+    </script>
+</body>
+</html>

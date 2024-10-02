@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //'this' always points to Employee irrespective of where you
+        // are calling it
+        // object level
+        // ctor level
+        // prototype level
+        
+        function Employee(r){
+            this.role = r;
+            /*// ctor level - here reusing the source code
+            this.display = function(){
+                console.log('Constructor Level '+this.role);
+            }*/
+        }
+        /*
+        All javascript objects inherit properties and methods from a prototype.
+        Date objects inherit form Date.prototype
+        Array objects inherit from Array.prototype
+        Person objects inherit from Person.prototype
+
+        Date, Array, Person object inherit from Object.prototype
+        */
+
+        // prototype level - here reusing the source code and 
+                            // even in the memory as well
+                            
+        Employee.prototype.display = function(){
+            console.log('Prototype Level '+this.role);
+        }
+        
+        var emp1 = new Employee('Developer');
+        var emp2 = new Employee('Tester');
+        var emp3 = new Employee('Manager');
+        
+        // Object Level
+        emp2.display = function(){
+            console.log('Object Level '+this.role);
+        }
+
+        emp1.display();
+        emp2.display();
+        emp3.display();
+        
+    </script>
+</body>
+</html>

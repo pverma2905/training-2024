@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // in es5 no overloading
+        // in es5 overriding possible
+        function getArgs(){
+            document.write('<br/>Inside Args');
+
+            for(var i in arguments){
+                document.write('<br/>'+arguments[i])
+                
+            }
+            document.write('<br/>')
+        }
+
+        function getArgs(x,y,z){
+            document.write('<br/>Inside getArgs with 3 arguments!');
+
+            for(var i in arguments){
+                document.write('<br/>'+arguments[i]);
+            }
+            
+            document.write('<br/>');
+        }
+
+        function getArgs(x,y){
+            document.write('<br/>Inside getArgs with 2 arguments!');
+
+            for(var i in arguments){
+                document.write('<br/>'+arguments[i]);
+            }
+            
+            document.write('<br/>');
+        }
+        getArgs();
+        getArgs(10,20,30);
+        getArgs(122.23,34);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

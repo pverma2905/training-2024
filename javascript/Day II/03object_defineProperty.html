@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*function Person(fName,lName){
+            this.firstName = fName;
+            this.lastName = lName;
+            this.species = 'Human';
+            this.fullName = function(){
+                return this.firstName+' '+this.lastName;
+            }
+        }
+
+        var man = new Person('Rahul','Dravid');
+        console.log(man.fullName()+' '+man.species);
+        
+        man.species = 'Fish';// modify the property
+        console.log(man.fullName()+' '+man.species);
+
+        delete man.species; // delete the property
+        console.log(man.fullName()+' '+man.species);*/
+
+        // Object.defineProperty() method - defines a new property or
+        // modifies an exisiting property on an object.
+
+        function Person(fName,lName){
+            this.firstName = fName;
+            this.lastName = lName;
+            this.species = 'Human';
+            this.fullName = function(){
+                return this.firstName+' '+this.lastName;
+            }
+        }
+
+        var man = new Person('Rahul','Dravid');
+        console.log(man.fullName()+' '+man.species);
+        
+        Object.defineProperty(man,'species',{
+            value:'Human Being',
+            writable:false, // modification
+            configurable:false, // deletion
+            enumerable:false // for in loop
+        });
+
+        console.log(man.fullName()+' '+man.species);
+        man.species = 'Fish';// modify the property
+        console.log(man.fullName()+' '+man.species);
+
+        delete man.species; // delete the property
+        console.log(man.fullName()+' '+man.species);
+
+        console.log('\n');
+
+        for(var prop in man){
+            console.log(man[prop]);
+        }
+
+        // Assignment 1 - ES2015 for of loop
+        // enumerable:false will it be accessible through for of loop or not
+
+        // Assignment 2
+        // Try out for another method
+        // Object.defineProperties
+    </script>
+</body>
+</html>

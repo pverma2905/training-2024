@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        In ES2015 - class using keyword class
+        class Person{
+            // properties
+        }
+
+        In ES2015 - Inheritance with keyword extends
+        class B{}
+        class A extends B{}
+
+        // In ES5 Inheritance
+        // Prototype Chaining
+        // Classical Inheritance
+        // Pseudoclassical Inheritance - Combination of prototype chaining and classical inheritance
+        */
+
+       /*// 1 Prototype Chaining
+
+        function Parent(relation){
+            this.relation = relation;
+            // ctor level of parent class
+            this.jobs = ['Service','Business'];
+            this.show = function(){
+                alert(this.relation);
+            }
+        }
+
+        Parent.prototype.parentPrototypeMethod = function(){
+            alert("Parent's prototype level method!");
+        }
+
+        // Prototype Chaining
+        Child.prototype = new Parent('Mother');
+        Child.prototype.constructor = Child;// For proper execution of sequence of constructors
+
+        function Child(rel){ 
+        }
+
+        var child1 = new Child('Son');
+        var child2 = new Child('Daughter');
+
+        child1.show();
+        child2.show();
+
+        console.log(child1.jobs);
+        console.log(child2.jobs);
+        // through child class object
+        child1.jobs.push('Retired');
+        console.log(child1.jobs);
+        console.log(child2.jobs); 
+
+        child1.parentPrototypeMethod();
+
+        // Limitations of Prototype Chaining
+        // 1. Argument's can't be passed to the super/ base class
+        // data member while creating sub/derived class object.
+        // 2. Inherited instance properties become prototype properties */
+
+      /*
+        // call and apply
+
+        var person1 = {name:'Sachin',city:'Mumbai'};
+        var person2 = {name:'Rahul',city:'Bengaluru'};
+
+        var sayHello = function(){
+            alert('Hello '+this.name+' from '+this.city);
+        }
+
+        //sayHello();
+        //person1.sayHello();
+        //sayHello(person1);
+
+        sayHello.call(person1);
+        sayHello.apply(person2);
+
+        // You can call any function, global or member function of another class
+        // by passing any object to it using call or apply
+
+        var updateInfo = function(name,city){
+            this.name = name;
+            this.city = city;
+        }
+
+        updateInfo.call(person1,'Mahi','Ranchi');// passing multiple parameters individually
+        sayHello.call(person1);
+        var nameArr = ['Yuvi','Chandigarh'];
+        updateInfo.apply(person2,nameArr); // passing multiple parameters as an array
+        sayHello.call(person2); */
+
+
+        // 2 Classical Inheritance
+
+      function Parent(relation) {
+        this.relation = relation;
+        // ctor level of parent class
+        this.jobs = ["Service", "Business"];
+        this.show = function () {
+          alert(this.relation);
+        };
+      }
+
+      Parent.prototype.parentPrototypeMethod = function () {
+        alert("Parent's prototype level method!");
+      };
+
+      function Child(rel) {
+        // classical inheritance
+        Parent.call(this, rel);
+      }
+
+      var child1 = new Child("Son");
+      var child2 = new Child("Daughter");
+
+      child1.show();
+      child2.show();
+
+      console.log(child1.jobs);
+      console.log(child2.jobs);
+      // through child class object
+      child1.jobs.push("Retired");
+      console.log(child1.jobs);
+      console.log(child2.jobs);
+
+      //child1.parentPrototypeMethod();
+
+      // Limitations of Classical Inheritance
+      // 1. No function reuse - at memory level
+      // 2. Child can't access methods defined at parent prototype level
+   
+    </script>
+  </body>
+</html>

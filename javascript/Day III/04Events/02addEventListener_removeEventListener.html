@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        div{
+            background-color: peachpuff;
+            color:maroon;
+            border: 1px solid Navy;
+            padding:50px;
+        }
+        #p1{
+            font-size: xx-large;
+            font-weight: bolder;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="div1">
+        <input type="button" id="removeButton" value="Remove" />
+        <button type="button" id="addButton">Add</button>
+    </div>
+    <p id="p1"></p>
+    <script>
+      function $(id) {
+        return document.getElementById(id);
+      }
+
+      // event listener for div's mousemove
+      // event's data is being stored in a variable 'evt' here.
+
+      function foo(evt){
+        $('p1').innerHTML = ('X '+evt.pageX+' Y '+evt.pageY);
+      }
+
+      $('div1').addEventListener('mousemove',foo);
+
+      $('removeButton').addEventListener('click',function(){
+            $('div1').removeEventListener('mousemove',foo);
+      })
+      $('addButton').addEventListener('click',function(){
+        $('div1').addEventListener('mousemove',foo);
+  })
+
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div1">
+      <p id="para1">This is bubbling!</p>
+    </div>
+    <div id="div2">
+      <p id="para2">This is capturing!</p>
+    </div>
+    <script>
+      function $(id) {
+        return document.getElementById(id);
+      }
+
+      // Benefit 2 - Event Propagation Handling
+      // Events are getting propagated from child to parent - bubbling
+      // Events are getting propagated from parent to child - capturing
+
+      $("div1").addEventListener(
+        "click",
+        function () {
+          alert("You clicked div1!");
+        },
+        false
+      ); // default false - bubbling - from child to parent
+      $("para1").addEventListener(
+        "click",
+        function () {
+          alert("You clicked para1!");
+        },
+        false
+      );
+      $("div2").addEventListener(
+        "click",
+        function () {
+          alert("You clicked div2!");
+        },
+        true
+      ); // true - capturing - from parent to child
+      $("para2").addEventListener(
+        "click",
+        function () {
+          alert("You clicked para2!");
+        },
+        true
+      );
+    </script>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="para1">Simple Paragraph!</p>
+    <script>
+      function $(id) {
+        return document.getElementById(id);
+      }
+
+      // event listener 1
+      document.addEventListener("click", function () {
+        $("para1").innerHTML = "Hello World!";
+        $("para1").style.backgroundColor = "Orange";
+      });
+
+      // Benefit 1 - you can have multiple event listeners for the same event using addEventListener
+
+      // event listener 2
+      document.addEventListener("click", function () {
+        $("para1").innerHTML += "<br/>Just to say Hi!";
+        $("para1").style.color = "white";
+        $("para1").style.fontSize = "xx-large";
+      });
+
+      /*document.onclick = function(){
+            alert('document clicked!');
+        }*/
+    </script>
+  </body>
+</html> -->
